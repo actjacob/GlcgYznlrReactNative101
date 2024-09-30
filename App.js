@@ -1,20 +1,40 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { StatusBar } from "expo-status-bar";
+import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
 
-export default function App() {
+const App = () => {
+  const [name, setName] = useState("Mehmet");
+  //setName veriyi değiştirebilmek için kullanılan bir şey
+  const [age, setAge] = useState(29);
+  const [isVisible, setIsVisible] = useState(true);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView style={styles.container}>
+      <Button
+        title={isVisible ? "Gizle" : "Göster"}
+        onPress={() => setIsVisible(!isVisible)}
+      />
+
+      {isVisible && (
+        <>
+          <Text>{name} </Text>
+          <Text>{age} </Text>
+          <Button title="İsmi Değiştir" onPress={() => setName("Ahmet")} />
+          <Button title="Yaşı Değiştir" onPress={() => setAge(30)} />
+        </>
+      )}
+
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
+
+export default App;
