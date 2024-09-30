@@ -1,33 +1,19 @@
 import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import WhatState from "./src/screens/What_is_state/WhatState";
+import ObjectState from "./src/screens/ObjectState/ObjectState";
 
 const App = () => {
-  const [name, setName] = useState("Mehmet");
-  //setName veriyi değiştirebilmek için kullanılan bir şey
-  const [age, setAge] = useState(29);
-  const [isVisible, setIsVisible] = useState(true);
-
   return (
     <SafeAreaView style={styles.container}>
-      <Button
-        title={isVisible ? "Gizle" : "Göster"}
-        onPress={() => setIsVisible(!isVisible)}
-      />
-
-      {isVisible && (
-        <>
-          <Text>{name} </Text>
-          <Text>{age} </Text>
-          <Button title="İsmi Değiştir" onPress={() => setName("Ahmet")} />
-          <Button title="Yaşı Değiştir" onPress={() => setAge(30)} />
-        </>
-      )}
-
+      <ObjectState />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
 };
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
@@ -36,5 +22,3 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
-
-export default App;
