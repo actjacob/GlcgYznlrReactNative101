@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { StatusBar } from "expo-status-bar";
 import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import WhatState from "./src/screens/What_is_state/WhatState";
-import ObjectState from "./src/screens/ObjectState/ObjectState";
+import ArrayState from "./src/screens/ArrayState/ArrayState";
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <ObjectState />
-      <StatusBar style="auto" />
+      <ArrayState />
     </SafeAreaView>
   );
 };
@@ -18,7 +17,5 @@ export default App;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

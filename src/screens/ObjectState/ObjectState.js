@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { View, Text, SafeAreaView, StyleSheet, Button } from "react-native";
+import { Text, SafeAreaView, StyleSheet, Button } from "react-native";
 
 const ObjectState = () => {
   const [user, setUser] = useState({ id: 1, name: "Jacob" });
 
   const handlePress = () => {
-    setUser({ ...user, name: "Mete" });
+    setUser((prev) => ({ ...user, name: "Mete" }));
   };
   // ...user ile userın o anki hali alınır ardından güncelleme yapılır
   return (
