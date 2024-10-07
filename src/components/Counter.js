@@ -6,8 +6,16 @@ const Counter = () => {
   const [amount, setAmaount] = useState(1);
 
   useEffect(() => {
-    console.log("Component mount edildi.");
+    const interval = setInterval(() => {
+      console.log("setInterval");
+      setCount((prev) => prev + 1);
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, []);
+  //bir component üzerinde websocket bağlantısı açmışsanız ve o componenti unmount yaptığınız anda websocket bağlantısını kapatmak isterseniz buradaki mantığı kullanabilirsiniz
 
   useEffect(() => {
     console.log("Count veya Amount değişti");
