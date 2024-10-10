@@ -5,16 +5,16 @@ const Counter = () => {
   const [count, setCount] = useState(0);
   const [amount, setAmaount] = useState(1);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      console.log("setInterval");
-      setCount((prev) => prev + 1);
-    }, 1000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     console.log("setInterval");
+  //     setCount((prev) => prev + 1);
+  //   }, 1000);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
   //bir component üzerinde websocket bağlantısı açmışsanız ve o componenti unmount yaptığınız anda websocket bağlantısını kapatmak isterseniz buradaki mantığı kullanabilirsiniz
 
   useEffect(() => {
